@@ -8,7 +8,9 @@ import Work from "../components/Work";
 
 export default function Home() {
   return (
-    <div>
+    <div className="min-h-screen bg-base-100">
+      {" "}
+      {/* This applies the theme background */}
       <HomePage />
       <Me />
       <Education />

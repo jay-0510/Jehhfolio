@@ -23,12 +23,22 @@ const Education = () => {
       coursework: "Physics, Chemistry, Mathematics,",
       extracurricular: "Chemistry Club, MATHS TEAM",
     },
+    {
+      id: 3,
+      degree: "Class 10",
+      institution: "Saraswati Shishukunj",
+      location: "Borsad",
+      year: "2018 - 2019",
+      cgpa: "8.9/10",
+      coursework: "Subjective Learning of Board Exams",
+      extracurricular: "Among top 10 in the school, Football team leader",
+    },
   ];
 
   return (
-    <div id="education" className="w-full py-16 bg-gray-100">
-      <div className="max-w-screen-xl mx-auto px-8">
-        <h2 className="text-5xl font-bold text-left text-blue-500 mb-12">
+    <div id="work-experience" className="w-full py-15">
+      <div className="max-w-screen-xl mx-auto px-8 py-16 text-center md:text-left">
+        <h2 className="text-3xl md:text-5xl tracking-wider uppercase text-blue-500 font-bold">
           Education
         </h2>
 
@@ -38,7 +48,7 @@ const Education = () => {
           <div className="absolute left-1/2 h-full border border-blue-300 transform -translate-x-1/2"></div>
 
           {/* Timeline items */}
-          <div className="space-y-12">
+          <div className="space-y-20">
             {educationData.map(
               ({
                 id,

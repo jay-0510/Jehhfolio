@@ -1,6 +1,5 @@
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
-
 import {
   FaBars,
   FaTimes,
@@ -9,40 +8,25 @@ import {
   FaTwitter,
   FaLinkedin,
 } from "react-icons/fa";
+import SwapThemes from "./SwapThemes"; // Import the theme switcher component
 
 const Navbar = () => {
   const [navigation, setNavigation] = useState(false);
   const [pageScroll, setPageScroll] = useState(false);
 
   useEffect(() => {
-    const sub = window.addEventListener("scroll", () =>
-      setPageScroll(window.scrollY >= 90)
-    );
+    const handleScroll = () => setPageScroll(window.scrollY >= 90);
+    window.addEventListener("scroll", handleScroll);
 
-    return sub;
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const links = [
-    {
-      id: 1,
-      link: "home",
-    },
-    {
-      id: 2,
-      link: "me",
-    },
-    {
-      id: 3,
-      link: "experience",
-    },
-    {
-      id: 4,
-      link: "Projects",
-    },
-    {
-      id: 5,
-      link: "contact",
-    },
+    { id: 1, link: "home" },
+    { id: 2, link: "me" },
+    { id: 3, link: "experience" },
+    { id: 4, link: "Projects" },
+    { id: 5, link: "contact" },
   ];
 
   return (
@@ -52,11 +36,15 @@ const Navbar = () => {
       }`}
     >
       <div className="flex justify-between items-center w-full h-full max-w-screen-xl mx-auto p-4">
-        <Link href="/#home">
-          <h1 className="text-1xl lg:text-1xl font-bold uppercase underline underline-offset-2 tracking-wider cursor-pointer">
-            JEHHH
-          </h1>
-        </Link>
+        <div className="flex items-center">
+          <Link href="/#home">
+            <h1 className="text-1xl lg:text-1xl font-bold uppercase underline underline-offset-2 tracking-wider cursor-pointer">
+              JEHHH
+            </h1>
+          </Link>
+          <SwapThemes className="ml-4" />{" "}
+          {/* Add theme switcher beside the title */}
+        </div>
 
         <div>
           <ul className="hidden md:flex">
@@ -129,16 +117,16 @@ const Navbar = () => {
 
             <div>
               <div className="grid grid-cols-2 mx-auto w-4/5 gap-10">
-                <div className="flex items-center justify-center rounded-full shadow-md shadow-white p-3 cursor-pointer">
+                <div className="flex items-center justify-center rounded-full shadow-md shadow-red p-3 cursor-pointer">
                   <FaLinkedin size={25} />
                 </div>
-                <div className="flex items-center justify-center rounded-full shadow-md shadow-white p-3 cursor-pointer">
+                <div className="flex items-center justify-center rounded-full shadow-md shadow-red p-3 cursor-pointer">
                   <FaTwitter size={25} />
                 </div>
-                <div className="flex items-center justify-center rounded-full shadow-md shadow-white p-3 cursor-pointer">
+                <div className="flex items-center justify-center rounded-full shadow-md shadow-red p-3 cursor-pointer">
                   <FaFacebook size={25} />
                 </div>
-                <div className="flex items-center justify-center rounded-full shadow-md shadow-white p-3 cursor-pointer">
+                <div className="flex items-center justify-center rounded-full shadow-md shadow-red p-3 cursor-pointer">
                   <FaGithub size={25} />
                 </div>
               </div>
