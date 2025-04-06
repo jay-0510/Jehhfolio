@@ -1,83 +1,103 @@
-import React from "react";
-
-import { MdExpandMore } from "react-icons/md";
-
+"use client";
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import Image from "next/image";
 import spotify from "../public/assets/portfolio/spotify.jpeg";
 import portfolio from "../public/assets/portfolio/portfolio.jpeg";
 import foodies from "../public/assets/portfolio/foodies.jpeg";
-//import usestate from "../public/assets/portfolio/usestate.jpg";
 import reactWeather from "../public/assets/portfolio/reactWeather.jpg";
-import Link from "next/link";
-import Image from "next/image";
 
 const Portfolio = () => {
-  const portfolios = [
+  const [activeId, setActiveId] = useState(null);
+
+  const handleClick = (id) => {
+    setActiveId(activeId === id ? null : id);
+  };
+
+  const projects = [
     {
       id: 1,
       title: "React Weather App",
-      imageSrc: reactWeather,
-      url: "react-weather",
+      image: reactWeather,
+      description:
+        "A weather forecasting app using OpenWeather API and React hooks.",
+      tech: "React, Tailwind CSS, Axios",
+      demo: "#",
     },
     {
       id: 2,
       title: "Spotify-Web API",
-      imageSrc: spotify,
-      url: "spotify-web",
+      image: spotify,
+      description:
+        "Integrated with Spotify’s API to fetch playlists and songs.",
+      tech: "React, REST API, OAuth",
+      demo: "#",
     },
     {
       id: 3,
-      title: "Portfolio",
-      imageSrc: portfolio,
-      url: "portfolio",
+      title: "Personal Portfolio",
+      image: portfolio,
+      description:
+        "My developer portfolio showcasing skills, projects, and resume.",
+      tech: "Next.js, Tailwind, Vercel",
+      demo: "#",
     },
     {
       id: 4,
-      title: "Food App",
-      imageSrc: foodies,
-      url: "food-app",
+      title: "Foodies App",
+      image: foodies,
+      description: "A food recipe app to search and save delicious dishes.",
+      tech: "React, Spoonacular API, Styled Components",
+      demo: "#",
     },
   ];
 
   return (
-    <div id="portfolio" className="w-full">
-      <div className="max-w-screen-xl mx-auto px-8 py-16 text-center md:text-left">
-        <h2 className="text-3xl md:text-5xl tracking-wider uppercase text-blue-500 font-bold">
-          Projects
-        </h2>
-        <p className="py-4 max-w-lg">
-          Experience a showcase of full-stack projects leveraging a diverse
-          array of technologies, seamlessly integrating front-end interfaces
-          with powerful back-end functionalities to deliver robust and dynamic
-          web solutions.
+    <div id="portfolio" className="w-full py-16 bg-white text-black">
+      <div className="max-w-screen-xl mx-auto px-4 text-center">
+        <h2 className="text-4xl font-bold text-blue-600 mb-4">My Projects</h2>
+        <p className="mb-10 text-gray-600 max-w-2xl mx-auto">
+          Explore some of my featured projects. Click to expand and read more!
         </p>
 
-        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-8">
-          {portfolios.map(({ id, title, imageSrc, url }) => (
-            <Link key={id} href={`/portfolio/${url}`}>
-              <div className="cursor-pointer group shadow-md shadow-gray-600 overflow-hidden rounded-md">
-                <Image
-                  src={imageSrc}
-                  alt={title}
-                  className="rounded-md duration-200 
-                  hover:scale-110"
-                />
-                <h2 className="text-center text-base capitalize my-4 font-light duration-200 group-hover:underline underline-offset-4">
-                  {title}
-                </h2>
+        <div className="grid md:grid-cols-2 gap-6">
+          {projects.map((proj) => (
+            <div
+              key={proj.id}
+              onClick={() => handleClick(proj.id)}
+              className="cursor-pointer border rounded-xl shadow-lg overflow-hidden transition hover:shadow-xl"
+            >
+              <Image
+                src={proj.image}
+                alt={proj.title}
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-4 text-left">
+                <h3 className="text-xl font-semibold text-blue-500">
+                  {proj.title}
+                </h3>
               </div>
-            </Link>
-          ))}
-        </div>
 
-        <div className="flex items-center justify-center">
-          <Link href="/portfolio">
-            <div className="group flex items-center justify-center my-8 bg-blue-500 text-white px-6 py-3 font-bold uppercase rounded-md tracking-wider cursor-pointer">
-              All Projects
-              <span className="-rotate-90 duration-100 ease-in group-hover:translate-x-5">
-                <MdExpandMore size={25} />
-              </span>
+              {activeId === proj.id && (
+                <motion.div
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: "auto" }}
+                  transition={{ duration: 0.3 }}
+                  className="px-4 pb-4 text-sm text-gray-600"
+                >
+                  <p className="mb-2">{proj.description}</p>
+                  <p className="text-blue-500 font-medium">Tech: {proj.tech}</p>
+                  <a
+                    href={proj.demo}
+                    className="inline-block mt-3 underline text-blue-600 hover:text-blue-800"
+                    target="_blank"
+                  >
+                    View Live
+                  </a>
+                </motion.div>
+              )}
             </div>
-          </Link>
+          ))}
         </div>
       </div>
     </div>

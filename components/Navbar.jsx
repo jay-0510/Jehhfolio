@@ -89,7 +89,7 @@ const Navbar = () => {
                   onClick={() => setNavigation(false)}
                   className="text-3xl font-bold uppercase underline underline-offset-2 tracking-wider cursor-pointer"
                 >
-                  JEHHH
+                  JAY
                 </h2>
               </Link>
               <div

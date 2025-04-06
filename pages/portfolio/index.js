@@ -4,7 +4,6 @@ import foodies from "../../public/assets/portfolio/foodies.jpeg";
 // import usestate from "../../public/assets/portfolio/usestate.jpg";
 import reactWeather from "../../public/assets/portfolio/reactWeather.jpg";
 import portfolio from "../../public/assets/portfolio/portfolio.jpeg";
-import { MdExpandMore } from "react-icons/md";
 import Link from "next/link";
 import Image from "next/image";
 

@@ -37,16 +37,6 @@ const SwapThemes = () => {
             </button>
           </li>
           <li>
-            <button data-set-theme="emerald" data-act-classname="active">
-              ✳️ Emerald
-            </button>
-          </li>
-          <li>
-            <button data-set-theme="corporate" data-act-classname="active">
-              🏢 Corporate
-            </button>
-          </li>
-          <li>
             <button data-set-theme="synthwave" data-act-classname="active">
               🌃 synthwave
             </button>
