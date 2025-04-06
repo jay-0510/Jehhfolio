@@ -54,9 +54,9 @@ const Portfolio = () => {
 
   return (
     <div id="portfolio" className="w-full py-16 bg-white text-black">
-      <div className="max-w-screen-xl mx-auto px-4 text-center">
-        <h2 className="text-4xl font-bold uppercase text-blue-600 mb-4">
-          My Projects
+      <div className="max-w-screen-xl mx-auto px-8 text-center md:text-center">
+        <h2 className="text-4xl md:text-5xl font-bold uppercase text-cyan-400 mb-12 tracking-wider">
+          Projects
         </h2>
         <p className="mb-10 text-gray-600 max-w-2xl mx-auto">
           Explore some of my featured projects. Click to expand and read more!

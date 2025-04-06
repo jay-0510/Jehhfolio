@@ -38,15 +38,10 @@ const Experience = () => {
 
   return (
     <div id="experience" className="w-full">
-      <div className="max-w-screen-xl mx-auto px-8 py-16 text-center md:text-left">
-        <h2 className="text-3xl md:text-5xl tracking-wider uppercase text-blue-500 font-bold">
+      <div className="max-w-screen-xl mx-auto px-8 text-center md:text-center">
+        <h2 className="text-4xl md:text-5xl font-bold uppercase text-cyan-400 mb-12 tracking-wider">
           Technical Skills
         </h2>
-        <p className="py-4 max-w-lg">
-          Skilled full stack developer with expertise in both front-end &
-          back-end technologies such as MERN Stack, Next.JS, MySQL, continually
-          expanding my knowledge base with emerging technologies.
-        </p>
 
         <div className="grid lg:grid-cols-4 gap-8">
           {experiences.map(({ id, title, src }) => (

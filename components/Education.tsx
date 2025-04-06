@@ -10,7 +10,7 @@ const Education = () => {
       institution: "Vellore Institute of Technology",
       location: "Bhopal",
       year: "2021 - 2025",
-      cgpa: 8.4,
+      cgpa: 8.5,
       coursework: "OS, CN, DBMS, Cloud Computing, Data Structures",
       extracurricular: "Google Crowdsource, Chess Club, Coding Clubs",
     },

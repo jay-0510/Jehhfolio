@@ -37,9 +37,9 @@ const WorkExperience = () => {
 
   return (
     <div id="work-experience" className="w-full py-16">
-      <div className="max-w-screen-xl mx-auto px-8 py-16 text-center md:text-left">
-        <h2 className="text-3xl md:text-5xl tracking-wider uppercase text-blue-500 font-bold">
-          Work Experience
+      <div className="max-w-screen-xl mx-auto px-8 text-center md:text-center">
+        <h2 className="text-4xl md:text-5xl font-bold uppercase text-cyan-400 mb-12 tracking-wider">
+          work experience
         </h2>
 
         <div className="grid md:grid-cols-2 gap-8 mt-8">
