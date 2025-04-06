@@ -25,7 +25,7 @@ const Navbar = () => {
     { id: 1, link: "home" },
     { id: 2, link: "me" },
     { id: 3, link: "experience" },
-    { id: 4, link: "Projects" },
+    { id: 4, link: "projects" },
     { id: 5, link: "contact" },
   ];
 
@@ -50,7 +50,7 @@ const Navbar = () => {
           <ul className="hidden md:flex">
             {links.map(({ id, link }) => (
               <Link key={id} href={`/#${link}`}>
-                <li className="ml-10 text-sm uppercase cursor-pointer duration-200 ease-out hover:scale-105 tracking-wider">
+                <li className="ml-10 text-sm uppercase cursor-pointer duration-200 ease-out hover:scale-105 tracking-wider hover:text-blue-400">
                   {link}
                 </li>
               </Link>
